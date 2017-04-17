@@ -6,24 +6,80 @@
 
     <groupId>com.sbt.codeit</groupId>
     <artifactId>TankBot</artifactId>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <mainClass>com.sbt.codeit.bot.TankBot</mainClass>
+        <api.jar.path>libs/tanks-api-1.0-SNAPSHOT.jar</api.jar.path>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.sbt.codeit</groupId>
-            <artifactId>tank-controller-api</artifactId>
-            <version>1.0</version>
+            <artifactId>tank-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/libs/tanks-api-1.0-SNAPSHOT.jar</systemPath>
+            <systemPath>${project.basedir}/${api.jar.path}</systemPath>
         </dependency>
     </dependencies>
 
-   <!-- <repositories>
-        <repository>
-            <id>project.local</id>
-            <name>project</name>
-            <url>file:${project.basedir}/libs/tank-controller-api-1.0.jar</url>
-        </repository>
-    </repositories>-->
+    <build>
+
+<!--        <resources>
+            <resource>
+                <directory>${project.basedir}</directory>
+                <includes>
+                    <include>libs/*.jar</include>
+                </includes>
+            </resource>
+        </resources>-->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>${mainClass}</mainClass>
+                        </manifest>
+                        <manifestEntries>
+                            <Class-Path>${api.jar.path}</Class-Path>
+                        </manifestEntries>
+
+                    </archive>
+                </configuration>
+            </plugin>
+            <!--<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.5.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>
+                                ${project.build.directory}/libs/
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>-->
+        </plugins>
+    </build>
 
 </project>

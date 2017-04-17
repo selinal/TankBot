@@ -13,8 +13,6 @@ public class TankBot implements ServerListener {
     private static GameController server;
     private static ServerListener client;
 
-    private int i = 0;
-
     public static void main(String... args) {
         try {
             TankBot tankBot = new TankBot();
@@ -40,11 +38,11 @@ public class TankBot implements ServerListener {
     public void update(ArrayList<ArrayList<Character>> field) {
         try {
             // place your code here
-            //analise field
+            // analise field
             // and perform action
-//            server.left(client);
-//            server.right(client);
-//            server.fire(client);
+            // server.left(client);
+            // server.right(client);
+            // server.fire(client);
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
