@@ -14,7 +14,7 @@
             <artifactId>tank-controller-api</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/libs/tank-controller-api-1.0.jar</systemPath>
+            <systemPath>${project.basedir}/libs/tanks-api-1.0-SNAPSHOT.jar</systemPath>
         </dependency>
     </dependencies>
 

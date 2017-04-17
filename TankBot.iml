@@ -14,7 +14,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.sbt.codeit:tank-controller-api:1.0">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/tank-controller-api-1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/libs/tanks-api-1.0-SNAPSHOT.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
