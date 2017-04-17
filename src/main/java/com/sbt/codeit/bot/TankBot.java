@@ -34,8 +34,7 @@ public class TankBot implements ServerListener {
 
     private static String getName(){
         //place your command name here
-//        throw new RuntimeException("Place your command name here");
-        return "HARMA";
+        throw new RuntimeException("Place your command name here");
     }
 
     public void update(ArrayList<ArrayList<Character>> field) {
