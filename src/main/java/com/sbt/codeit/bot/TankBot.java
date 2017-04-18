@@ -6,9 +6,6 @@ import com.sbt.codeit.core.control.ServerListener;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
-/**
- * Created by sbt-selin-an on 18.04.2017.
- */
 public class TankBot implements ServerListener {
 
     private GameController server;
@@ -32,7 +29,6 @@ public class TankBot implements ServerListener {
     }
 
     public String getName() {
-//        throw new RuntimeException("Place your command name here");
-        return "Rx";
+        throw new RuntimeException("Place your command name here");
     }
 }
