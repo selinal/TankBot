@@ -14,26 +14,8 @@ public class ServerListenerImpl implements ServerListener {
     private GameController server;
 
     public ServerListenerImpl(GameController server) {
-        this.server=server;
+        this.server = server;
     }
-
-    //    private static ServerListener client;
-
-/*    public ServerListenerImpl(String name) {
-        try {
-            Registry registry = LocateRegistry.getRegistry(ServerListener.HOST, ServerListener.PORT);
-            server = (GameController) registry.lookup(ServerListener.STUB_NAME);
-            client = (ServerListener) UnicastRemoteObject.exportObject(tankBot, 0);
-            server.register(client, name);
-            server.start(client);
-            synchronized (tankBot) {
-                tankBot.wait();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
-    }*/
 
     public void update(ArrayList<ArrayList<Character>> arrayList) throws RemoteException {
         try {
@@ -41,12 +23,15 @@ public class ServerListenerImpl implements ServerListener {
             // analise field
             // and perform action
              server.left(this);
-            // server.right(client);
-            // server.fire(client);
+             server.right(this);
+             server.fire(this);
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);
         }
     }
 
+    public String getName() {
+        throw new RuntimeException("Place your command name here");
+    }
 }

@@ -20,7 +20,7 @@ public class TankBot  {
             ServerListener tankBot = new ServerListenerImpl(server);
 
             client = (ServerListener) UnicastRemoteObject.exportObject(tankBot, 0);
-            server.register(client, getName());
+            server.register(client, ((ServerListenerImpl)tankBot).getName());
             server.start(client);
             synchronized (tankBot) {
                 tankBot.wait();
@@ -30,13 +30,4 @@ public class TankBot  {
             System.exit(1);
         }
     }
-
-    private static String getName(){
-        //place your command name here
-//        throw new RuntimeException("Place your command name here");
-        return "HHHSA";
-    }
-
-
-
 }

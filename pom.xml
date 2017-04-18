@@ -10,18 +10,7 @@
 
     <properties>
         <mainClass>com.sbt.codeit.bot.TankBot</mainClass>
-        <!--<api.jar.path>libs/tanks-api-1.0-SNAPSHOT.jar</api.jar.path>-->
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.sbt.codeit</groupId>
-            <artifactId>tank-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <!--<scope>system</scope>-->
-            <!--<systemPath>${project.basedir}/${api.jar.path}</systemPath>-->
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
