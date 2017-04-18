@@ -19,9 +19,9 @@ public class TankBot implements ServerListener {
             // place your code here
             // analise field
             // and perform action
-             server.left(this);
-             server.right(this);
-             server.fire(this);
+            server.right(this);
+            server.start(this);
+            server.fire(this);
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);

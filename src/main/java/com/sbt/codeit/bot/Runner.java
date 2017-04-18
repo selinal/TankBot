@@ -22,7 +22,6 @@ public class Runner {
             ServerListener tankBot = new TankBot(server);
             client = (ServerListener) UnicastRemoteObject.exportObject(tankBot, 0);
             server.register(client, ((TankBot)tankBot).getName());
-            server.start(client);
             synchronized (tankBot) {
                 tankBot.wait();
             }
