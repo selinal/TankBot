@@ -15,8 +15,6 @@ public class TankBot implements ServerListener {
     private Random random = new Random();
     private int i = 0;
 
-    public TankBot(GameController server) {
-        this.server = server;
     public TankBot(GameController controller) {
         this.controller = controller;
     }
@@ -26,24 +24,24 @@ public class TankBot implements ServerListener {
     }
 
     public void update(ArrayList<ArrayList<Character>> arrayList) throws RemoteException {
-        server.start(this);
-        server.fire(this);
+        controller.start(this);
+        controller.fire(this);
         i++;
         if(i % 5 != 0) {
             return;
         }
         switch (random.nextInt(4)){
             case 0:
-                server.left(this);
+                controller.left(this);
                 break;
             case 1:
-                server.right(this);
+                controller.right(this);
                 break;
             case 2:
-                server.up(this);
+                controller.up(this);
                 break;
             case 3:
-                server.down(this);
+                controller.down(this);
                 break;
         }
     }
