@@ -25,9 +25,10 @@ public class Runner {
     public static void main(String... args) throws Exception {
         registry = LocateRegistry.getRegistry(PORT);
         server = (GameController) registry.lookup(STUB_NAME);
-        ServerListener tankBot = new TankBot(server);
+        TankBot tankBot = new TankBot(server);
         client = (ServerListener) UnicastRemoteObject.exportObject(tankBot, 0);
-        server.register(client, ((TankBot)tankBot).getName());
+        Character id = server.register(client, tankBot.getName());
+        tankBot.setId(id);
         while(true) {
             checkConnection();
         }

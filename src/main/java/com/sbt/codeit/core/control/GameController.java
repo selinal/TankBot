@@ -7,8 +7,9 @@ public interface GameController extends Remote {
 
     /**
      * Регистрация бота на сервере. Вызывается 1 раз в методе main
+     * Возвращает символ, которым будет обозначен танк на игровом поле
      */
-    void register(ServerListener serverListener, String name) throws RemoteException;
+    Character register(ServerListener serverListener, String name) throws RemoteException;
 
     /**
      * Начать движение

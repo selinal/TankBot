@@ -9,9 +9,14 @@ import java.util.ArrayList;
 public class TankBot implements ServerListener {
 
     private GameController controller;
+    private Character id;
 
     public TankBot(GameController controller) {
         this.controller = controller;
+    }
+
+    public void setId(Character id) {
+        this.id = id;
     }
 
     public void update(ArrayList<ArrayList<Character>> arrayList) throws RemoteException {
