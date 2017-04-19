@@ -9,13 +9,20 @@ import java.util.Random;
 
 public class TankBot implements ServerListener {
 
-    private GameController server;
+    private GameController controller;
+    private Character id;
 
     private Random random = new Random();
     private int i = 0;
 
     public TankBot(GameController server) {
         this.server = server;
+    public TankBot(GameController controller) {
+        this.controller = controller;
+    }
+
+    public void setId(Character id) {
+        this.id = id;
     }
 
     public void update(ArrayList<ArrayList<Character>> arrayList) throws RemoteException {
@@ -44,5 +51,4 @@ public class TankBot implements ServerListener {
     public String getName() {
         return "Team1";
     }
-
 }
