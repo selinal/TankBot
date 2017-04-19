@@ -8,27 +8,21 @@ import java.util.ArrayList;
 
 public class TankBot implements ServerListener {
 
-    private GameController server;
+    private GameController controller;
 
-    public TankBot(GameController server) {
-        this.server = server;
+    public TankBot(GameController controller) {
+        this.controller = controller;
     }
 
     public void update(ArrayList<ArrayList<Character>> arrayList) throws RemoteException {
-        try {
-            // place your code here
-            // analise field
-            // and perform action
-            server.right(this);
-            server.start(this);
-            server.fire(this);
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.exit(1);
-        }
+        //TODO Разместите свой код здесь. Пример вызова методов:
+        controller.start(this); //начинаем ехать сразу и больше не останавливаемся
+        controller.right(this); //поворачиваем направо
+        controller.fire(this); //стреляем всегда, когда это возможно
     }
 
     public String getName() {
-        throw new RuntimeException("Place your command name here");
+        throw new RuntimeException("Метод должен вернуть имя вашей команды");
     }
+
 }

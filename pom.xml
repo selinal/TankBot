@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <mainClass>com.sbt.codeit.bot.Runner</mainClass>
+        <mainClass>com.sbt.codeit.main.Runner</mainClass>
     </properties>
 
     <build>
